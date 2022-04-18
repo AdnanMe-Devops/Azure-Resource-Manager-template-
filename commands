@@ -1,0 +1,9 @@
+az deployment group create --resource-group $resource_group --template-file template.json --parameters @template.parameters.json
+resource_group=$(az group list --query '[0].name'  | tr -d '"')
+echo $resource_group
+
+ The az group list command uses the Azure CLI to get the resource group name. The tr command deletes the quotation marks that Azure CLI encloses JSON formatted strings with.
+
+ Enter the following command into the Cloud Shell to create your Resource Manager template deployment:
+
+az deployment group create --resource-group $resource_group --template-file template.json --parameters @template.parameters.json
